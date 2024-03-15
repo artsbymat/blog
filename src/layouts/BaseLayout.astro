@@ -1,6 +1,7 @@
 ---
 import '@styles/global.css';
 const { title } = Astro.props;
+import Navbar from '@components/Navbar';
 ---
 
 <html lang="en">
@@ -12,6 +13,9 @@ const { title } = Astro.props;
     <title>{title}</title>
   </head>
   <body>
-    <slot />
+    <Navbar path={Astro.url.pathname} client:media="(max-width: 40em)" />
+    <main>
+      <slot />
+    </main>
   </body>
 </html>
