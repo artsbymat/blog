@@ -10,7 +10,7 @@ const Navbar = ({ path }: { path: string }) => {
   const [isNavOpen, setIsNavOpen] = useState(false);
   return (
     <header>
-      <div className="mx-auto h-16 max-w-screen-xl bg-white sm:h-24">
+      <div className="h-16 bg-white sm:h-24">
         <div className="flex h-full items-center justify-between px-4">
           <div className="z-10 text-2xl font-medium">
             <a href="/">Blog.</a>
