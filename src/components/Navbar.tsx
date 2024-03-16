@@ -8,6 +8,10 @@ const navItems = [
 
 const Navbar = ({ path }: { path: string }) => {
   const [isNavOpen, setIsNavOpen] = useState(false);
+  const handleClick = () => {
+    setIsNavOpen(!isNavOpen);
+    document.body.classList.toggle('overflow-hidden');
+  };
   return (
     <header>
       <div className="h-16 bg-white sm:h-24">
@@ -19,7 +23,7 @@ const Navbar = ({ path }: { path: string }) => {
             className={`ham hamRotate hamMenu z-10 block sm:hidden ${isNavOpen ? 'active' : ''}`}
             viewBox="0 0 100 100"
             width="55"
-            onClick={() => setIsNavOpen(!isNavOpen)}
+            onClick={handleClick}
           >
             <path
               className="line top"
