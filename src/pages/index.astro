@@ -1,7 +1,12 @@
 ---
 import BaseLayout from '@layouts/BaseLayout.astro';
+import PageTitle from '@components/PageTitle';
+import RecentPost from '@components/RecentPost';
 ---
 
 <BaseLayout title={'Home'}>
-  <h1>Index</h1>
+  <div id="home">
+    <PageTitle title={'Recent Posts'} />
+    <RecentPost />
+  </div>
 </BaseLayout>
