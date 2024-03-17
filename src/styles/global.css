@@ -5,7 +5,6 @@ body {
 }
 
 /* Hamburger Menu */
-
 header .ham {
   cursor: pointer;
   -webkit-tap-highlight-color: transparent;

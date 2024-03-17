@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import useMediaQuery from '@hooks/useMediaQuery';
 
 const navItems = [
   { title: 'Home', link: '/' },
@@ -12,6 +13,13 @@ const Navbar = ({ path }: { path: string }) => {
     setIsNavOpen(!isNavOpen);
     document.body.classList.toggle('overflow-hidden');
   };
+
+  const isDesktop = useMediaQuery('(min-width: 640px)');
+  if (isDesktop && isNavOpen) {
+    document.body.classList.remove('overflow-hidden');
+    setIsNavOpen(!isNavOpen);
+  }
+
   return (
     <header>
       <div className="h-16 bg-white sm:h-24">
