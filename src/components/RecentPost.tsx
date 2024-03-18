@@ -18,6 +18,8 @@ const RecentPost = ({
   tags: string[];
   isDraft: boolean;
 }) => {
+  const uniqueTags = [...new Set(tags.map((tag) => tag).flat())];
+
   return (
     <div className="mt-5 px-4 py-2">
       <div className="flex items-center gap-5 text-gray-800">
@@ -30,7 +32,7 @@ const RecentPost = ({
         <div className="flex items-center gap-2">
           <GoTag size={22} />
           <ul className="flex flex-wrap items-center text-base">
-            {tags.slice(0, 3).map((tag, index) => (
+            {uniqueTags.slice(0, 3).map((tag, index) => (
               <li key={index}>
                 {index !== 0 && ','}
                 <a href={`/tags/${tag}`}>{tag}</a>
