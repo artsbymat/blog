@@ -1,7 +1,27 @@
 ---
 import BaseLayout from '@layouts/BaseLayout.astro';
+import PageTitle from '@components/PageTitle';
+import ListAllTags from '@components/ListAllTags';
+import ListAllPost from '@components/ListAllPosts';
+
+import { getCollection } from 'astro:content';
+const posts = await getCollection('articles', ({ data }) => {
+  return import.meta.env.PROD ? data.draft !== true : true;
+});
+
+const descPosts = [...posts].sort(
+  (a, b) => b.data.publishDate.valueOf() - a.data.publishDate.valueOf()
+);
+
+const uniqueTags = [...new Set(posts.map((post) => post.data.tags).flat())];
+const uniqueYears = [...new Set(posts.map((post) => post.data.publishDate.getFullYear()))];
 ---
 
 <BaseLayout title={'Posts'}>
-  <h1>Posts</h1>
+  <div id="posts">
+    <PageTitle title={'List All Tags'} />
+    <ListAllTags tags={uniqueTags} />
+    <PageTitle title={'List All Post'} />
+    <ListAllPost uniqueYears={uniqueYears} posts={descPosts} />
+  </div>
 </BaseLayout>
