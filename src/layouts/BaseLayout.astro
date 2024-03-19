@@ -3,6 +3,7 @@ import '@styles/global.css';
 const { title } = Astro.props;
 import Navbar from '@components/Navbar';
 import Footer from '@components/Footer';
+import { ViewTransitions } from 'astro:transitions';
 ---
 
 <html lang="en">
@@ -12,6 +13,7 @@ import Footer from '@components/Footer';
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
+    <ViewTransitions />
   </head>
   <body>
     <Navbar path={Astro.url.pathname} client:media="(max-width: 40em)" />
