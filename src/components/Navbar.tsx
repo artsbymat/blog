@@ -51,7 +51,7 @@ const Navbar = ({ path }: { path: string }) => {
               <a
                 key={item.title}
                 href={item.link}
-                className={`text-[1.1rem] hover:font-medium ${item.link === path ? 'font-medium' : 'font-normal'}`}
+                className={`text-[1.1rem] hover:font-medium ${item.link === path ? 'text-red-500 font-medium' : 'text-black font-normal'}`}
               >
                 {item.title}
               </a>
