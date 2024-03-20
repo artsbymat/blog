@@ -1,0 +1,16 @@
+---
+import BaseLayout from '@layouts/BaseLayout.astro';
+import PageTitle from '@components/PageTitle';
+import AllTags from '@components/AllTags';
+
+import { getCollection } from 'astro:content';
+
+const posts = await getCollection('articles', ({ data }) => {
+  return import.meta.env.PROD ? data.draft !== true : true;
+});
+---
+
+<BaseLayout>
+  <PageTitle title="Tags" />
+  <AllTags posts={posts} client:visible />
+</BaseLayout>

@@ -1,14 +1,15 @@
-const AllPosts = ({ posts, uniqueYears }) => {
+const AllPosts = ({ posts }) => {
+  const uniqueYears = [...new Set(posts.map((post) => post.data.publishDate.getFullYear()))];
   return (
     <div className="px-4">
       <div>
         {uniqueYears.map((year) => (
-          <div>
+          <div key={year}>
             <h2 className="pt-4 text-2xl font-medium" key={year}>
               {year}
             </h2>
             <div className="my-4">
-              <div className="list-disc list-inside">
+              <div className="">
                 {posts
                   .filter((post) => post.data.publishDate.getFullYear() === year)
                   .map((post) => {

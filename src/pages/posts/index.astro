@@ -19,8 +19,6 @@ const uniqueYears = [...new Set(posts.map((post) => post.data.publishDate.getFul
 
 <BaseLayout title={'Posts'}>
   <div id="posts">
-    <PageTitle title={'List All Tags'} />
-    <ListAllTags tags={uniqueTags} />
     <PageTitle title={'List All Post'} />
     <ListAllPost uniqueYears={uniqueYears} posts={descPosts} />
   </div>

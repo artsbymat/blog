@@ -4,6 +4,7 @@ import useMediaQuery from '@hooks/useMediaQuery';
 const navItems = [
   { title: 'Home', link: '/' },
   { title: 'Posts', link: '/posts' },
+  { title: 'Tags', link: '/tags' },
   { title: 'About', link: '/about' }
 ];
 
