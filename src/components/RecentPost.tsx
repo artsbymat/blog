@@ -22,7 +22,7 @@ const RecentPost = ({
 
   return (
     <div className="mt-5 px-4 py-2">
-      <div className="flex items-center gap-5 text-gray-800">
+      <div className="flex items-center flex-wrap gap-x-5 gap-y-2 text-gray-800">
         <div className="flex items-center gap-2">
           <HiOutlineCalendar size={25} />
           <p className="text-base">
