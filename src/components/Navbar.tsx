@@ -25,11 +25,11 @@ const Navbar = ({ path }: { path: string }) => {
     <header>
       <div className="h-16 bg-white sm:h-24">
         <div className="flex h-full items-center justify-between px-4">
-          <div className="z-10 text-2xl font-medium">
+          <div className="z-20 text-2xl font-medium">
             <a href="/">Blog.</a>
           </div>
           <svg
-            className={`ham hamRotate hamMenu z-10 block sm:hidden ${isNavOpen ? 'active' : ''}`}
+            className={`ham hamRotate hamMenu z-20 block sm:hidden ${isNavOpen ? 'active' : ''}`}
             viewBox="0 0 100 100"
             width="55"
             onClick={handleClick}
@@ -45,7 +45,7 @@ const Navbar = ({ path }: { path: string }) => {
             />
           </svg>
           <nav
-            className={`absolute right-0 top-0 flex h-screen w-full flex-col items-center justify-center gap-16 bg-white transition-transform duration-500 sm:static sm:h-auto sm:w-auto sm:translate-y-0 sm:flex-row sm:gap-10 ${isNavOpen ? 'translate-y-0' : '-translate-y-full'}`}
+            className={`z-10 absolute right-0 top-0 flex h-screen w-full flex-col items-center justify-center gap-16 bg-white transition-transform duration-500 sm:static sm:h-auto sm:w-auto sm:translate-y-0 sm:flex-row sm:gap-10 ${isNavOpen ? 'translate-y-0' : '-translate-y-full'}`}
           >
             {navItems.map((item) => (
               <a
