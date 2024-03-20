@@ -10,7 +10,7 @@ const posts = await getCollection('articles', ({ data }) => {
 });
 ---
 
-<BaseLayout>
+<BaseLayout title={'Tags'}>
   <PageTitle title="Tags" />
   <AllTags posts={posts} client:visible />
 </BaseLayout>
