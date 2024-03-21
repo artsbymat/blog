@@ -28,14 +28,14 @@ const Info = ({ date, readingTime, words }) => {
   const formattedDate = formatDate(date);
   return (
     <div>
-      <div className="my-8 flex flex-row justify-center gap-2 font-medium text-gray-500">
+      <div className="mt-4 flex flex-row justify-center gap-2 font-medium text-gray-500">
         <time>{formattedDate}</time>
         <span>/</span>
         <p>{Math.floor(readingTime)} min</p>
         <span>/</span>
         <p>{words} words</p>
       </div>
-      <div className="h-2 w-10 bg-red-400 rounded flex mx-auto"></div>
+      <div className="my-10 h-2 w-10 bg-red-400 rounded flex mx-auto"></div>
     </div>
   );
 };
