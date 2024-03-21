@@ -1,6 +1,7 @@
 ---
 import ArticleLayout from '@layouts/ArticleLayout.astro';
 import Title from '@components/article/Title';
+import Info from '@components/article/Info';
 
 import { getCollection } from 'astro:content';
 export async function getStaticPaths() {
@@ -14,11 +15,13 @@ export async function getStaticPaths() {
 }
 
 const post = Astro.props;
-const { Content } = await post.render();
+const { Content, remarkPluginFrontmatter } = await post.render();
+const {readingTime, words} = remarkPluginFrontmatter.readInfo;
 ---
 
 <ArticleLayout>
   <Title title={post.data.title} />
+  <Info date={post.data.publishDate} readingTime={readingTime} words={words} />
   <section id="article">
     <Content />
   </section>
