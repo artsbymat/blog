@@ -4,6 +4,24 @@ body {
   @apply max-w-screen-xl mx-auto font-inter;
 }
 
+main {
+  @apply sm:mt-0 mt-16;
+}
+
+/* Navbar */
+header .scroll-reveal {
+  opacity: 0;
+  transform: translateY(20px);
+  transition:
+    opacity 0.5s,
+    transform 0.5s;
+}
+
+header .scroll-reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
 /* Hamburger Menu */
 header .ham {
   cursor: pointer;

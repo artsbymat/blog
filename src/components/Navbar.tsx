@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import useMediaQuery from '@hooks/useMediaQuery';
 
 const navItems = [
@@ -10,6 +10,34 @@ const navItems = [
 
 const Navbar = ({ path }: { path: string }) => {
   const [isNavOpen, setIsNavOpen] = useState(false);
+  const [show, setShow] = useState(true);
+  const [border, setBorder] = useState(false);
+  const [lastScrollY, setLastScrollY] = useState(0);
+
+  const controlNavbar = () => {
+    if (window.scrollY > 0) {
+      setBorder(true);
+    } else {
+      setBorder(false);
+    }
+
+    if (window.scrollY > lastScrollY) {
+      setShow(false);
+    } else {
+      setShow(true);
+    }
+
+    setLastScrollY(window.scrollY);
+  };
+
+  useEffect(() => {
+    window.addEventListener('scroll', controlNavbar);
+
+    return () => {
+      window.removeEventListener('scroll', controlNavbar);
+    };
+  }, [lastScrollY]);
+
   const handleClick = () => {
     setIsNavOpen(!isNavOpen);
     document.body.classList.toggle('overflow-hidden');
@@ -23,7 +51,9 @@ const Navbar = ({ path }: { path: string }) => {
 
   return (
     <header>
-      <div className="h-16 bg-white sm:h-24">
+      <div
+        className={`h-16 bg-white duration-500 sm:h-24 sm:static fixed top-0 w-full max-w-screen-xl transition-all sm:translate-y-0 sm:border-none ${show ? '-translate-y-0' : '-translate-y-full'} ${border && 'border-b-gray-300 border-2'}`}
+      >
         <div className="flex h-full items-center justify-between px-4">
           <div className="z-20 text-2xl font-medium">
             <a href="/">Blog.</a>

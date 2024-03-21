@@ -27,7 +27,7 @@ const formatDate = (dateString) => {
 const Info = ({ date, readingTime, words }) => {
   const formattedDate = formatDate(date);
   return (
-    <div className="my-4">
+    <div>
       <div className="my-8 flex flex-row justify-center gap-2 font-medium text-gray-500">
         <time>{formattedDate}</time>
         <span>/</span>
