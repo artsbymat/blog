@@ -1,3 +1,5 @@
+src/content/articles/dummy*.md*
+
 # build output
 dist/
 # generated types
