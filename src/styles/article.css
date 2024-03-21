@@ -1,5 +1,6 @@
 /* Article */
 
+/* Heading */
 #article {
   @apply max-w-screen-xl px-4;
 }
@@ -28,6 +29,86 @@
   @apply my-2 text-lg font-bold text-gray-600;
 }
 
+/* Paragraphs */
 #article p {
   @apply text-xl leading-relaxed;
+}
+
+/* inline code block */
+#article code {
+  @apply font-jetBrainsMono p-1 bg-gray-300 rounded;
+}
+
+/* order list */
+#article ol {
+  @apply ml-6 pl-4 py-4 text-xl list-decimal list-outside;
+}
+
+/* unorder list */
+#article ul {
+  @apply ml-6 pl-4 py-4 text-xl list-disc list-outside;
+}
+
+/* list checkbox */
+#article ul.contains-task-list {
+  @apply list-none ml-0;
+}
+
+#article ul.contains-task-list li.task-list-item input {
+  @apply mr-2;
+}
+
+/* blockquote */
+#article blockquote {
+  @apply p-4 my-4 border-s-4 border-gray-300 bg-gray-50;
+}
+
+#article blockquote p {
+  @apply italic;
+}
+
+#article blockquote cite sup {
+  @apply text-blue-600;
+}
+
+#article .footnotes {
+  @apply border-l-0 border-r-0 border-b-0 border-t-2 border-2 my-4;
+}
+
+#article .footnotes h2#footnotes {
+  @apply hidden;
+}
+
+#article .footnotes ol {
+  @apply ml-0;
+}
+
+#article .footnotes ol li {
+  @apply text-base;
+}
+
+#article .footnotes ol li p {
+  @apply text-base;
+}
+
+/* image */
+#article figure.img {
+  @apply py-8;
+}
+
+#article figure.img figcaption {
+  @apply text-gray-700 pt-2;
+}
+
+/* table */
+#article table {
+  @apply rounded border-separate border-gray-300 border-2 w-full text-lg text-left bg-gray-100;
+}
+
+#article table thead tr th {
+  @apply p-2 text-lg bg-gray-200;
+}
+
+#article table tbody tr td {
+  @apply p-2;
 }

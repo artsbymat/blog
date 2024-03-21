@@ -8,6 +8,8 @@ export default defineConfig({
   integrations: [tailwind(), react(), mdx()],
   markdown: {
     remarkPlugins: [remarkReadingTime]
+  },
+  image: {
+    domains: ['res.cloudinary.com']
   }
 });
-
