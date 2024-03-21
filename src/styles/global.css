@@ -49,8 +49,6 @@ header .hamMenu.active .bottom {
   stroke-dashoffset: -138px;
 }
 
-/* Home Page */
-
 /* 404 */
 #four-o-four {
   transform: scale(1);
@@ -200,4 +198,10 @@ header .hamMenu.active .bottom {
   #four-o-four {
     transform: scale(0.5);
   }
+}
+
+/* Article */
+
+#article {
+  @apply max-w-screen-xl px-4;
 }
