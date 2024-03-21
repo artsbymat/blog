@@ -217,9 +217,3 @@ header .hamMenu.active .bottom {
     transform: scale(0.5);
   }
 }
-
-/* Article */
-
-#article {
-  @apply max-w-screen-xl px-4;
-}
