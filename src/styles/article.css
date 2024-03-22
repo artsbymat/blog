@@ -41,6 +41,11 @@
   @apply text-blue-500;
 }
 
+#article p a span,
+#article li a span {
+  @apply text-base align-top;
+}
+
 /* inline code block */
 #article p code,
 #article td code,
