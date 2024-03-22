@@ -34,14 +34,31 @@
   @apply text-xl leading-relaxed;
 }
 
+/* link */
+
+#article p a,
+#article li a {
+  @apply text-blue-500;
+}
+
 /* inline code block */
-#article code {
+#article p code,
+#article td code,
+#article li code {
   @apply font-jetBrainsMono p-1 bg-gray-300 rounded;
 }
 
 /* order list */
 #article ol {
   @apply ml-6 pl-4 py-4 text-xl list-decimal list-outside;
+}
+
+#article ol li {
+  @apply p-1;
+}
+
+#article ul li {
+  @apply p-1;
 }
 
 /* unorder list */
@@ -52,6 +69,10 @@
 /* list checkbox */
 #article ul.contains-task-list {
   @apply list-none ml-0;
+}
+
+#article ul.contains-task-list li.task-list-item {
+  @apply p-2;
 }
 
 #article ul.contains-task-list li.task-list-item input {
@@ -111,4 +132,8 @@
 
 #article table tbody tr td {
   @apply p-2;
+}
+
+#article pre.astro-code {
+  @apply font-jetBrainsMono text-lg my-8 p-4 rounded;
 }
