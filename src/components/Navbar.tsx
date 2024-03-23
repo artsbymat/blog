@@ -38,6 +38,12 @@ const Navbar = ({ path }: { path: string }) => {
     };
   }, [lastScrollY]);
 
+  useEffect(() => {
+    if (window.scrollY > 0) {
+      setShow(false);
+    }
+  }, []);
+
   const handleClick = () => {
     setIsNavOpen(!isNavOpen);
     document.body.classList.toggle('overflow-hidden');
