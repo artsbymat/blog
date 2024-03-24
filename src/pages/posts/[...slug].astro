@@ -3,6 +3,7 @@ import ArticleLayout from '@layouts/ArticleLayout.astro';
 import Title from '@components/article/Title';
 import Info from '@components/article/Info';
 import Tags from '@components/article/Tags';
+import Toc from '@components/article/Toc';
 
 import { styleMDX } from '@components/article/CustomMD.mdx';
 
@@ -18,13 +19,16 @@ export async function getStaticPaths() {
 }
 
 const post = Astro.props;
-const { Content, remarkPluginFrontmatter } = await post.render();
+const { Content, headings, remarkPluginFrontmatter } = await post.render();
 const { readingTime, words } = remarkPluginFrontmatter.readInfo;
 ---
 
 <ArticleLayout>
   <Title title={post.data.title} slug={post.slug} />
   <Info date={post.data.publishDate} modifiedDate={post.data.modifiedDate} readingTime={readingTime} words={words} />
+{headings.length > 0 &&
+  <Toc headings={headings} />
+  }
   <section id="article">
     <Content components={styleMDX} />
   </section>
