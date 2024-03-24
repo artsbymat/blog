@@ -2,6 +2,7 @@
 import ArticleLayout from '@layouts/ArticleLayout.astro';
 import Title from '@components/article/Title';
 import Info from '@components/article/Info';
+import Tags from '@components/article/Tags';
 
 import { styleMDX } from '@components/article/CustomMD.mdx';
 
@@ -27,4 +28,5 @@ const { readingTime, words } = remarkPluginFrontmatter.readInfo;
   <section id="article">
     <Content components={styleMDX} />
   </section>
+  <Tags tags={post.data.tags} />
 </ArticleLayout>
