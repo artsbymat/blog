@@ -46,6 +46,10 @@
   @apply text-base align-top;
 }
 
+#article blockquote cite sup {
+  @apply static align-super ml-1;
+}
+
 /* inline code block */
 #article p code,
 #article td code,
