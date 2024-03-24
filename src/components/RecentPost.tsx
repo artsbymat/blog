@@ -47,7 +47,10 @@ const RecentPost = ({
           </div>
         )}
       </div>
-      <div className="mt-2 text-2xl font-medium">
+      <div
+        className="mt-2 text-2xl font-medium recent-title"
+        style={{ viewTransitionName: `title-${slug}` }}
+      >
         <a href={`/posts/${slug}`}>{title}</a>
       </div>
       <div className="text-lg text-gray-700">{description}</div>

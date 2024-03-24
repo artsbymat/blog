@@ -22,7 +22,7 @@ const { readingTime, words } = remarkPluginFrontmatter.readInfo;
 ---
 
 <ArticleLayout>
-  <Title title={post.data.title} />
+  <Title title={post.data.title} slug={post.slug} />
   <Info date={post.data.publishDate} readingTime={readingTime} words={words} />
   <section id="article">
     <Content components={styleMDX} />
