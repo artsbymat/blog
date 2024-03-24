@@ -59,7 +59,7 @@ const Navbar = ({ path }: { path: string }) => {
   return (
     <header>
       <div
-        className={`h-16 bg-white duration-500 sm:h-24 sm:static fixed top-0 w-full max-w-screen-xl transition-all sm:translate-y-0 sm:border-none ${show ? '-translate-y-0' : '-translate-y-full'} ${border && 'border-b-gray-300 border-2'}`}
+        className={`z-50 h-16 bg-white duration-500 sm:h-24 sm:static fixed top-0 w-full max-w-screen-xl transition-all sm:translate-y-0 sm:border-none ${show ? '-translate-y-0' : '-translate-y-full'} ${border && 'border-b-gray-300 border-2'}`}
       >
         <div className="flex h-full items-center justify-between px-4">
           <div className="z-20 text-2xl font-medium">
