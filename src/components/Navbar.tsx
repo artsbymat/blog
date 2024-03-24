@@ -21,12 +21,13 @@ const Navbar = ({ path }: { path: string }) => {
       setBorder(false);
     }
 
+    if (isNavOpen) return;
+
     if (window.scrollY > lastScrollY) {
       setShow(false);
     } else {
       setShow(true);
     }
-
     setLastScrollY(window.scrollY);
   };
 
@@ -46,7 +47,7 @@ const Navbar = ({ path }: { path: string }) => {
 
   const handleClick = () => {
     setIsNavOpen(!isNavOpen);
-    document.body.classList.toggle('overflow-hidden');
+    document.body.classList.toggle('overflow-y-hidden');
   };
 
   const isDesktop = useMediaQuery('(min-width: 640px)');
