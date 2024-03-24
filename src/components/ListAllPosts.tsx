@@ -18,7 +18,10 @@ const AllPosts = ({ posts }) => {
                       .split('T')[0];
                     return (
                       <div key={post.slug} className="my-8">
-                        <h3 className="text-xl">
+                        <h3
+                          className="text-xl"
+                          style={{ viewTransitionName: `title-${post.slug}` }}
+                        >
                           <a href={`/posts/${post.slug}`}>{post.data.title}</a>
                         </h3>
                         <time className="text-gray-600">{formattedDate}</time>
