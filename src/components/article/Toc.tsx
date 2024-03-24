@@ -28,7 +28,7 @@ const Toc = ({ headings }) => {
     return toc;
   }
   return (
-    <div className="px-4 my-8">
+    <div className="px-4 lg:mt-4 my-8 lg:sticky lg:top-4 lg:h-screen">
       <div className="p-2 border-gray-500 border-2 rounded-md">
         <div className="p-2">
           <p className="text-2xl font-medium text-gray-600">Table Of Contents</p>

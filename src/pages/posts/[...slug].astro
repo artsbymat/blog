@@ -25,12 +25,17 @@ const { readingTime, words } = remarkPluginFrontmatter.readInfo;
 
 <ArticleLayout>
   <Title title={post.data.title} slug={post.slug} />
-  <Info date={post.data.publishDate} modifiedDate={post.data.modifiedDate} readingTime={readingTime} words={words} />
-{headings.length > 0 &&
-  <Toc headings={headings} />
-  }
-  <section id="article">
-    <Content components={styleMDX} />
-  </section>
+  <Info
+    date={post.data.publishDate}
+    modifiedDate={post.data.modifiedDate}
+    readingTime={readingTime}
+    words={words}
+  />
+  <div class="article-container">
+    {headings.length > 0 && <Toc headings={headings} />}
+    <section id="article">
+      <Content components={styleMDX} />
+    </section>
+  </div>
   <Tags tags={post.data.tags} />
 </ArticleLayout>

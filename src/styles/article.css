@@ -1,8 +1,12 @@
 /* Article */
 
+.article-container {
+  @apply lg:flex;
+}
+
 /* Heading */
 #article {
-  @apply max-w-screen-xl px-4;
+  @apply lg:max-w-prose max-w-screen-xl px-4;
 }
 
 #article h1 {
