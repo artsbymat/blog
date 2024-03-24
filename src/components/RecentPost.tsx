@@ -34,7 +34,7 @@ const RecentPost = ({
           <ul className="flex flex-wrap items-center text-base">
             {uniqueTags.slice(0, 3).map((tag, index) => (
               <li key={index}>
-                {index !== 0 && ','}
+                {index !== 0 && ', '}
                 <a href={`/tags/${tag}`}>{tag}</a>
               </li>
             ))}
