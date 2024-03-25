@@ -31,11 +31,11 @@ const Toc = ({ headings }) => {
     <div className="px-4 lg:mt-4 my-8 lg:sticky lg:top-4 lg:h-screen">
       <div className="p-2 border-gray-500 border-2 rounded-md">
         <div className="p-2">
-          <p className="text-2xl font-medium text-gray-600">Table Of Contents</p>
+          <p className="text-2xl font-medium text-gray-800">Table Of Contents</p>
         </div>
         <ol>
           {buildHierarchy(headings).map((h) => (
-            <li key={h.slug} className="ml-8 text-[1.1rem] text-blue-500 list-decimal">
+            <li key={h.slug} className="ml-8 text-[1.1rem] text-gray-800 list-decimal">
               <a href={`#${h.slug}`} className="hover:underline">
                 {h.text}
               </a>
@@ -44,7 +44,7 @@ const Toc = ({ headings }) => {
                   {h.subheadings.map((sh) => (
                     <li
                       key={sh.slug}
-                      className={`hover:text-blue-700 list-disc ${sh.depth === 2 && 'ml-6'} ${sh.depth === 3 && 'ml-12'}`}
+                      className={`hover:underline list-disc ${sh.depth === 2 && 'ml-6'} ${sh.depth === 3 && 'ml-12'}`}
                     >
                       <a href={`#${sh.slug}`}>{sh.text}</a>
                     </li>
