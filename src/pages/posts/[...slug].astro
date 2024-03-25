@@ -4,6 +4,7 @@ import Title from '@components/article/Title';
 import Info from '@components/article/Info';
 import Tags from '@components/article/Tags';
 import Toc from '@components/article/Toc';
+import AnotherPost from '@components/article/AnotherPost';
 
 import { styleMDX } from '@components/article/CustomMD.mdx';
 
@@ -12,13 +13,24 @@ export async function getStaticPaths() {
   const posts = await getCollection('articles', ({ data }) => {
     return import.meta.env.PROD ? data.draft !== true : true;
   });
-  return posts.map((post) => ({
+
+  const descPosts = [...posts].sort(
+    (a, b) => b.data.publishDate.valueOf() - a.data.publishDate.valueOf()
+  );
+
+  const numberOfPosts = descPosts.length;
+
+  return descPosts.map((post, index) => ({
     params: { slug: post.slug },
-    props: post
+    props: {
+      post,
+      prevPost: numberOfPosts === index + 1 ? null : descPosts[index+1].slug,
+      nextPost: index === 0 ? null : descPosts[index-1].slug
+    }
   }));
 }
 
-const post = Astro.props;
+const { post, prevPost, nextPost } = Astro.props;
 const { Content, headings, remarkPluginFrontmatter } = await post.render();
 const { readingTime, words } = remarkPluginFrontmatter.readInfo;
 ---
@@ -38,4 +50,5 @@ const { readingTime, words } = remarkPluginFrontmatter.readInfo;
     </section>
   </div>
   <Tags tags={post.data.tags} />
+  <AnotherPost prevPost={prevPost} nextPost={nextPost} />
 </ArticleLayout>
