@@ -6,7 +6,7 @@ const Tags = ({ tags }) => {
         <p>Tags: </p>
         <ul className="flex text-lg ml-2 items-center">
           {uniqueTags.map((tag, index) => (
-            <li>
+            <li key={tag}>
               {index !== 0 && ', '}
               <a href={`/tags/${tag}`}>{tag}</a>
             </li>
